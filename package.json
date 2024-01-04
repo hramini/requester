@@ -1,0 +1,52 @@
+{
+  "name": "@hramini/requester",
+  "version": "1.0.0",
+  "description": "This is a request handler class which is written based on the axios library",
+  "main": "./dist/requester-expose.js",
+  "types": "./dist/requester-types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "tsc": "rm -rf dist && tsc",
+    "dts:bundle": "dts-bundle-generator -o ./dist/requester-types.d.ts ./src/requester-expose.ts",
+    "dts:publish": "npm run tsc && npm run dts:bundle",
+    "prepublishOnly": "npm run dts:publish",
+    "dev": "ts-node ./example/index.ts"
+  },
+  "author": {
+    "name": "Hamidreza Amini",
+    "email": "hramini72@gmail.com",
+    "url": "https://hramini.ir"
+  },
+  "contributors": [
+    {
+      "name": "Hamidreza Amini",
+      "email": "hramini72@gmail.com",
+      "url": "https://hramini.ir"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hramini/requester.git"
+  },
+  "keywords": [
+    "api",
+    "request",
+    "axios"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hramini/requester/issues"
+  },
+  "homepage": "https://github.com/hramini/requester#readme",
+  "dependencies": {
+    "axios": "^1.6.4"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "dts-bundle-generator": "^9.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
